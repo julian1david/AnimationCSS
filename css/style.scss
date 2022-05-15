@@ -1,0 +1,389 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$dark-brown: #a54a38;
+$light-brown: #bf624c;
+$dark-green: #51af5e;
+$light-green: #51af5e;
+$shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$lightWhite: #CCEFFF;
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* Base*/
+.phone{
+    width: 300px;
+    height: 600px;
+    position: relative;
+    border: 8px solid black;
+    border-radius: 40px;
+    background-color: $lightWhite;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30),  
+            0 15px 12px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+
+/* Mountains */
+
+.montain{
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    bottom: 0;
+    background-color: $light-brown;
+    position: absolute;
+    box-shadow: $shadow;
+    &__border{
+        height: 20px;
+        background-color: $dark-green;
+    }
+    &__ziczag{
+        background: 
+            linear-gradient(135deg, $dark-green 25%, transparent 25%) -51px 0, 
+            linear-gradient(-135deg, $dark-green 25%, transparent 25%) -51px 0, 
+            linear-gradient(45deg, $light-brown 25%, transparent 25%),
+            linear-gradient(-45deg, transparent 25%, $dark-brown 25%);  
+        background-size: 32px 30px;
+        height: 30px;
+        width: 100%;
+    }
+    &__one{
+        width: 200px;
+        height: 400px;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    &__two{
+        width: 160px;
+        height: 300px;
+        z-index: 5;
+    }
+    &__three{
+        width: 160px;
+        height: 200px;
+        z-index: 7;
+        right: 0;
+    }
+}
+
+
+/* Containers pikachus */
+.layer{
+    position: absolute;
+    bottom: 0;
+    &__one{
+        height: 450px;
+        width: 70px;
+        right: 60px;
+        z-index: 1;
+        /*Selectrones de atributo*/
+        animation-name: layout-one;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        /*Esto en una sola linea de codigo seria*/
+        /* animation: layer 2s ease-in-out alternate infinite; */
+        @keyframes layout-one {
+            0%{
+                transform: translateY(0);
+            }
+            25%{
+                transform: translateY(-40px);
+            }
+            90%{
+                transform: translateY(0);
+            }
+        }
+    }
+    &__two{
+        height: 450px;
+        width: 70px;
+        z-index: 2;
+        left: 60px;
+        animation: layout-two 0.5s ease-in-out infinite; 
+        @keyframes layout-two {
+            0%{
+                transform: translateY(0);
+            }
+            25%{
+                transform: translateY(-20px);
+            }
+            90%{
+                transform: translateY(0);
+            }
+        }
+    }
+    &__three{
+        height: 350px;
+        width: 80px;
+        left: 40px;
+        z-index: 4;
+        animation: layout-three 1s ease-in-out infinite; 
+        @keyframes layout-three {
+            0%{
+                transform: translateX(0);
+                transform: translateY(0);
+            }
+            25%{
+                transform: translateX(-20px);
+                
+            }
+            40%{
+                transform: translateY(80px);
+            }
+            90%{
+                transform: translateX(0);
+                transform: translateY(0);
+            }
+        }
+    }
+    &__four{
+        height: 250px;
+        width: 80px;
+        right: 40px;
+        z-index: 6;
+        animation: layout-four 4s  infinite; 
+        @keyframes layout-four {
+            0%{
+                transform: translateY(0);
+            }
+            40%{
+                transform: translateY(90px);
+                transform: scale(0.5);
+            }
+            90%{
+                transform: translateY(0);
+            }
+        }
+    }
+    input[type=checkbox]{
+        position: absolute;
+        appearance: none;
+        cursor: pointer;
+        z-index: 1;
+        width: 100%;
+        height: 80px;
+    }
+}
+
+/* Nubes */
+.cloud{
+    bottom: 0;
+    position: absolute;
+    width: 120px;
+    height: 100px;
+    &__one{
+        z-index: 9;
+        left: 0;
+        &--left{
+            position: absolute;
+            background-color: white;
+            width: 80px;
+            height: 100px;
+            border-radius: 40px 40px 0 ;
+        }
+        &--right{
+            position: absolute;
+            background-color: white;
+            border-radius:40px 40px ;
+            width: 120px;
+            height: 66px;
+            bottom: 0;
+        }
+    }
+    &__two{
+        z-index: 9;
+        right: 0;
+        &--left{
+            position: absolute;
+            background-color: white;
+            border-radius:40px 40px ;
+            width: 120px;
+            height: 66px;
+            bottom: 0;
+        }
+        &--right{
+            position: absolute;
+            right: 0;
+            background-color: white;
+            width: 80px;
+            height: 100px;
+            border-radius: 40px 40px 0 ;
+        }
+    }
+    &__three{
+        height: 120px;
+        width: 200px;
+        z-index: 8;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        &--left{
+            position: absolute;
+            border-radius:40px 40px ;
+            background-color: $light-green;
+            width: 80px;
+            height: 90px;
+            left: 0;
+            bottom: 0;
+        }
+        &--medium{
+            position: absolute;
+            border-radius: 40px 40px 0 0;
+            background-color: $light-green;
+            height: 120px;
+            width: 80px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: 0;
+        }
+        &--right{
+            background-color: $light-green;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 80px;
+            height: 100px;
+            border-radius: 40px 40px 0  0;
+        }
+    }
+}
+
+
+/* Pikachu */
+
+
+.left-ear--outer{
+    background-color: #ffd401;
+    border-radius: 50% ;
+    width: 14px;
+    height: 40px;
+    position: absolute;
+    left: 10px;
+    transform: rotate(-40deg);
+}
+.right-ear--inner{
+    transform: rotate(40deg);
+    border-radius: 50% ;
+    background-color: #ffd401;
+    width: 14px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+}
+
+.head{
+    width: 60px;
+    height: 40px;
+    background-color: #ffd401;
+    position: absolute;
+    top: 10px;
+    border-radius: 40px 40px 10px 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    &__eye{
+        width: 10px;
+        height: 10px;
+        top: 10px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        &--left{
+            left: 14px;
+        }
+        &--right{
+            right: 14px;
+        }
+        /*Le damos un nombre a la animación*/
+        animation-name: blink;
+        /*Le damos la duración al a animación*/
+        animation-duration: 2s;
+        /*Cuanto deseamos que dure la animación*/
+        animation-iteration-count: infinite;
+        /*Se puede usar un transforme con un height pero en cuanto a tema de recurso es mejor el scale*/
+        @keyframes blink {
+            0%{
+                transform: scale(1, 1);
+            }
+            5%{
+                /*  height: 2px;
+                transform: translate(0, 50%); */
+                transform: scale(1, 0.3);                
+            }
+            10%{
+                transform: scale(1, 1);
+            }
+        }
+    }
+}
+.pupila{
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    &--left{
+        left: 2px;
+    }
+    &--right{
+        right: 4px;
+    }
+}
+.head__nouse{
+    width: 6px;
+    height: 6px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    position: absolute;
+    background-color: black;
+    border-radius: 20px 20px 16px 16px;
+}
+
+.head__rojo{
+    width: 10px;
+    height: 8px;
+    bottom: 8px;
+    border-radius: 50%;
+    background-color: #f0300d;
+    position: absolute;
+    &--left{
+        left: 10px;
+    }
+    &--right{
+        right: 10px;
+    }
+}
+.mount{
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 12px;
+    height: 1px;
+    background-color: black;
+    &__lengua{
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        position: absolute;
+        width: 5px;
+        height: 4px;
+        background-color: red;
+        border-radius: 0 0 10px 10px;
+    }
+}
+

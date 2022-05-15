@@ -9,6 +9,14 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
+  width: 100%;
+  text-align: center;
+  color: #a54a38;
+  font-weight: bold;
+}
+
+input:checked {
+  counter-increment: game;
 }
 
 /* Base*/
@@ -21,6 +29,16 @@ body {
   background-color: #CCEFFF;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   overflow: hidden;
+  counter-reset: game;
+}
+.phone__title {
+  padding: 10px;
+}
+.phone__title img {
+  width: 200px;
+}
+.phone__total::after {
+  content: counter(game);
 }
 
 /* Mountains */

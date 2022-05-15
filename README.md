@@ -4,7 +4,7 @@ Example to practice animation with CSS
 
 ## Vista del proyecto 🚀
 
-Mira **[Animation-Page]()** para conocer como funciona el proyecto.
+Mira **[Animation-Page](https://julian1david.github.io/AnimationCSS/)** para conocer como funciona el proyecto.
 
 
 ### Instalación 🔧
@@ -33,7 +33,7 @@ Cualquier contirbución al proyecto es bien recibida !
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE](LICENSE) para detalles
+Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) para detalles
 
 ---
 Hecho con ❤️ por [julian1f](https://github.com/julian1david) 😊
